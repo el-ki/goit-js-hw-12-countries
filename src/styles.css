@@ -13,11 +13,11 @@ body {
     Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif,
     'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
   font-size: 20px;
+}
 
-  /*
-   * CSS image reference example.
-   */
-  /* background-image: url('./images/bg-pattern.png'); */
+.country-container {
+  width: 50%;
+  background-color: rgb(224, 227, 228);
 }
 
 .country-title {
@@ -34,7 +34,24 @@ li {
 
 .country-input {
   padding: 10px;
-  border: 2px solid #808080;
   border-radius: 3px;
   width: 30%;
+  border-color: rgb(224, 227, 228);
+}
+
+.country-wrapper {
+  display: flex;
+  align-items: center;
+  padding-bottom: 30px;
+}
+
+.country-img {
+  max-width: 330px;
+  object-fit: contain;
+  display: block;
+  margin-left: 30px;
+}
+
+.country-list {
+  white-space: nowrap;
 }
