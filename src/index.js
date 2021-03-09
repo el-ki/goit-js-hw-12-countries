@@ -5,7 +5,7 @@ import countryListTpl from './templates/countriesList.hbs';
 import { notice, error } from '@pnotify/core';
 import '@pnotify/core/dist/PNotify.css';
 import '@pnotify/core/dist/BrightTheme.css';
-const debounce = require('lodash');
+import debounce from 'lodash.debounce'
 
 
 const refs = {
@@ -30,10 +30,12 @@ const clearAll = function () {
 const handleInput = event => {
     clearAll();
     const inputValue = event.target.value;
-    if (!inputValue) {
+    if (!inputValue.trim()) {
         return
     }
+
     fetchCountries(inputValue)
+        
         .then(country => {
             clearAll();
             if (country.length > 10) {
@@ -48,10 +50,12 @@ const handleInput = event => {
             }
             renderCountryCard(country[0]);
         })
-        .catch(err =>
-            error({
-                text: `Error! ${err}`
-            }));
+        .catch(err => {
+                error({
+                    text: 'Something went wrong! We cannot find your country',
+                    delay: 1000,
+                })
+        });
 }
 
-refs.countryInput.addEventListener('input', debounce.debounce(handleInput, 500))
+refs.countryInput.addEventListener('input', debounce(handleInput, 500))

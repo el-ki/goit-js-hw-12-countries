@@ -13,11 +13,11 @@ body {
     Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif,
     'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
   font-size: 20px;
+  background-color: rgb(224, 227, 228);
 }
 
 .country-container {
   width: 50%;
-  background-color: rgb(224, 227, 228);
 }
 
 .country-title {

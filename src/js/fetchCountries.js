@@ -1,5 +1,10 @@
+const BASE_URL = 'https://restcountries.eu/rest/v2';
+
 function fetchCountries(searchQuery) {
-    return fetch(`https://restcountries.eu/rest/v2/name/${searchQuery}`).then(response => {
+    return fetch(`${BASE_URL}/name/${searchQuery}`).then(response => {
+        if (!response.ok) {
+            return 
+        }
         return response.json();
     });
 }
